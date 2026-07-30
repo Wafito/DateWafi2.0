@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    /* Neue harmonische & romantische Farbpalette */
-    --bg-warm: #fff5f7;           /* Ganz zartes Pastell-Rosa/Weiß */
+    /* Neue harmonische & romantische Ozeanblau-Farbpalette */
+    --bg-warm: #f0f8ff;           /* Zartes Eisblau / Gischt-Weiß */
     --card-bg: #ffffff;
-    --text-main: #4a3f44;         /* Weiches Anthrazit-Braun statt hartem Schwarz */
-    --accent-peach: #ffcad4;      /* Sanfter Pfirsich-Ton */
-    --accent-rose: #f4acb7;       /* Romantisches Altrosa */
-    --btn-primary: #ff758f;       /* Fröhliches Erdbeer-Pink */
-    --btn-primary-hover: #ff4d6d;  /* Kräftigeres Pink beim Hover */
-    --btn-secondary: #9d8189;     /* Edles, mattes Rosen-Grau/Braun */
-    --error-red: #ff85a1;         /* Sanfteres Rot für Fehler */
+    --text-main: #2b3a4a;         /* Tiefes, weiches Ozean-Dunkelblau statt Schwarz */
+    --accent-peach: #b3e5fc;      /* Sanftes Hellblau / Lagoon-Akzent */
+    --accent-rose: #81d4fa;       /* Helles Meeresblau */
+    --btn-primary: #0288d1;       /* Strahlendes Ozeanblau */
+    --btn-primary-hover: #0277bd; /* Tieferes Ozeanblau beim Hover */
+    --btn-secondary: #5c6bc0;     /* Edles, leicht violettes Indigo-Blau */
+    --error-red: #4dd0e1;         /* Sanftes Türkis-Blau für Akzente */
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-warm);
-    /* Weichere Verläufe für einen "Träumerei"-Look */
-    background-image: radial-gradient(circle at top left, #ffe5ec 0%, transparent 50%),
-                      radial-gradient(circle at bottom right, #ffcad4 0%, transparent 50%);
+    /* Ozeanische Verläufe für einen verträumten Meerblick-Look */
+    background-image: radial-gradient(circle at top left, #e0f7fa 0%, transparent 50%),
+                      radial-gradient(circle at bottom right, #b3e5fc 0%, transparent 50%);
     color: var(--text-main);
     margin: 0;
     display: flex;
@@ -39,14 +39,14 @@ body.overflow-hidden {
     background: var(--card-bg);
     padding: 3rem 2rem;
     border-radius: 40px;
-    /* Schatten in Akzentfarbe für Tiefe */
-    box-shadow: 0 20px 50px rgba(244, 172, 183, 0.3);
+    /* Schatten in Blau-Akzentfarbe für maritime Tiefe */
+    box-shadow: 0 20px 50px rgba(2, 136, 209, 0.2);
     max-width: 100%;
     width: 380px;
     animation: floatCard 4s ease-in-out infinite;
     position: relative;
     z-index: 10;
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 h1, h2, h3 {
@@ -92,29 +92,29 @@ button {
 .btn-primary { 
     background-color: var(--btn-primary); 
     color: white; 
-    box-shadow: 0 8px 15px rgba(255, 117, 143, 0.4);
+    box-shadow: 0 8px 15px rgba(2, 136, 209, 0.35);
 }
 
 .btn-primary:hover { 
     background-color: var(--btn-primary-hover);
     transform: translateY(-5px) rotate(-1deg); 
-    box-shadow: 0 12px 20px rgba(255, 77, 109, 0.5); 
+    box-shadow: 0 12px 20px rgba(2, 119, 189, 0.45); 
 }
 
 .btn-secondary { 
     background-color: var(--btn-secondary); 
     color: white; 
-    box-shadow: 0 8px 15px rgba(157, 129, 137, 0.3);
+    box-shadow: 0 8px 15px rgba(92, 107, 192, 0.3);
 }
 
 .btn-secondary:hover { 
     transform: translateY(-5px) rotate(1deg); 
-    box-shadow: 0 12px 20px rgba(157, 129, 137, 0.4);
+    box-shadow: 0 12px 20px rgba(92, 107, 192, 0.4);
 }
 
 .btn-no { 
     background-color: transparent; 
-    color: rgb(61, 59, 59); 
+    color: var(--text-main); 
     border: 2px dashed var(--accent-rose);
     position: relative; 
     width: auto;
@@ -123,7 +123,7 @@ button {
 }
 
 .btn-no:hover {
-    background-color: #fff0f3;
+    background-color: #e1f5fe;
     color: var(--btn-primary-hover);
 }
 
@@ -153,7 +153,7 @@ button {
 
 .status-box {
     margin-top: 20px;
-    background: #fffafa;
+    background: #f4fbfe;
     padding: 20px;
     border-radius: 25px;
     border: 2px solid var(--accent-peach);
@@ -162,7 +162,7 @@ button {
 .progress-bar {
     width: 100%; 
     height: 14px; 
-    background: #fdf0f0; 
+    background: #e0f2fe; 
     border-radius: 10px; 
     overflow: hidden; 
     margin: 15px 0;
@@ -193,7 +193,7 @@ button {
 }
 
 .error-text { 
-    color: var(--error-red); 
+    color: var(--btn-primary); 
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
 }
@@ -208,8 +208,8 @@ button {
     z-index: 9999;
     animation: fall linear forwards;
     pointer-events: none;
-    /* Schatten für die Herzen für mehr "Glow" */
-    filter: drop-shadow(0 2px 4px rgba(255, 117, 143, 0.4));
+    /* Bläulicher Glow-Effekt */
+    filter: drop-shadow(0 2px 4px rgba(2, 136, 209, 0.4));
 }
 
 /* Styling für das Datumsauswahl-Formular */
@@ -241,7 +241,7 @@ button {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     outline: none;
-    background-color: #fffafa;
+    background-color: #f8fcff;
     color: var(--text-main);
     transition: border-color 0.3s ease;
 }
