@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termin finden 📅</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="center-content">
+    <div class="card">
+        <h1>Wohoooooo Ich freue mich 😍 </h1>
+        <h2>Wann hast du Zeit? 📅</h2>
+        <p>Wähle 1 bis 3 Termine aus, die dir am besten passen:</p>
+        
+        <form id="date-form" class="date-form">
+            <div class="input-group">
+                <label for="date1">1. Wunschtermin *</label>
+                <input type="date" id="date1" required class="date-input">
+            </div>
+            
+            <div class="input-group">
+                <label for="date2">2. Wunschtermin (optional)</label>
+                <input type="date" id="date2" class="date-input">
+            </div>
+            
+            <div class="input-group">
+                <label for="date3">3. Wunschtermin (optional)</label>
+                <input type="date" id="date3" class="date-input">
+            </div>
+
+            <button type="submit" class="btn-primary" style="margin-top: 15px;">Weiter zur Bestätigung ✨</button>
+        </form>
+    </div>
+
+    <script>
+        // Mindestdatum auf HEUTE setzen, damit man kein vergangenes Datum wählt
+        const today = new Date().toISOString().split('T')[0];
+        document.querySelectorAll('input[type="date"]').forEach(input => {
+            input.min = today;
+        });
+
+        // Beim Absenden die Termine speichern & weiterleiten
+        document.getElementById('date-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const d1 = document.getElementById('date1').value;
+            const d2 = document.getElementById('date2').value;
+            const d3 = document.getElementById('date3').value;
+
+            // Speichern im LocalStorage für die nächste Seite
+            localStorage.setItem('selectedDates', JSON.stringify({ d1, d2, d3 }));
+            
+            window.location.href = 'yes_super.html';
+        });
+    </script>
+</body>
+</html>
