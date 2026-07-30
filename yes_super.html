@@ -9,16 +9,44 @@
 <body class="center-content overflow-hidden">
     <div class="card canvas-container">
         <h1>Ich freueee michhh 🌹</h1>
-        <p>lass uns herausfinden, ob du die richtige Entscheidung getroffen hast! 😌</p>
+        <p></p>
         <p>Mutig genug? 😏 ... dann ⬇️</p>
-        <a href="https://wa.me/+4917632371605?text=Hey%20Wafi%20😍%20ich%20gehe%20sehr%20gerne%20mit%20dir%20auf%20ein%20Date!%20😍" class="btn-whatsapp">Nachricht an Wafi auf WhatsApp senden 😌</a>
+        
+        <!-- Der Link wird per JavaScript dynamsich befüllt -->
+        <a id="whatsapp-link" href="#" class="btn-whatsapp">Nachricht an Wafi auf WhatsApp senden 😌</a>
     </div>
     <script src="script.js"></script>
     <script>
-        // Starte Effekte sofort beim Laden
         window.onload = () => {
             createHearts();
             createConfetti();
+
+            // Ausgewählte Daten laden
+            const dates = JSON.parse(localStorage.getItem('selectedDates'));
+            let dateText = "";
+
+            if (dates && dates.d1) {
+                // Deutsches Datumsformat (DD.MM.YYYY) umwandeln
+                const formatDate = (str) => {
+                    if (!str) return null;
+                    const [y, m, d] = str.split('-');
+                    return `${d}.${m}.${y}`;
+                };
+
+                const formatted1 = formatDate(dates.d1);
+                const formatted2 = formatDate(dates.d2);
+                const formatted3 = formatDate(dates.d3);
+
+                dateText = `%0A%0AMeine%20Wunschtermine%3A%0A- %20${formatted1}`;
+                if (formatted2) dateText += `%0A- %20${formatted2}`;
+                if (formatted3) dateText += `%0A- %20${formatted3}`;
+            }
+
+            // WhatsApp-Link zusammenbauen
+            const baseUrl = "https://wa.me/+4917632371605?text=";
+            const message = `Hey%20Wafi%20😍%20ich%20gehe%20sehr%20gerne%20mit%20dir%20auf%20ein%20Date!${dateText}%20😍`;
+            
+            document.getElementById('whatsapp-link').href = baseUrl + message;
         };
     </script>
 </body>
