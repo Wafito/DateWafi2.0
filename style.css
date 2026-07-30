@@ -212,6 +212,44 @@ button {
     filter: drop-shadow(0 2px 4px rgba(255, 117, 143, 0.4));
 }
 
+/* Styling für das Datumsauswahl-Formular */
+.date-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-left: 5px;
+}
+
+.date-input {
+    padding: 12px 15px;
+    border-radius: 15px;
+    border: 2px solid var(--accent-peach);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    background-color: #fffafa;
+    color: var(--text-main);
+    transition: border-color 0.3s ease;
+}
+
+.date-input:focus {
+    border-color: var(--btn-primary);
+}
+
 @keyframes fall {
     0% { transform: translateY(-10vh) rotate(-15deg); opacity: 0; }
     10% { opacity: 1; }
